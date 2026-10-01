@@ -1,0 +1,34 @@
+# ==============================================================================
+# SafeDataConvert - 검색 및 AI 로봇 크롤링 제어 파일 (robots.txt)
+# 역할: 모든 주요 검색엔진 및 생성형 AI 봇(ChatGPT, Google Gemini, Claude, Perplexity)의
+#       자유로운 수집을 전면 허용하고 안내합니다.
+# ==============================================================================
+
+# 1. 모든 일반 검색엔진 (구글, 네이버, 빙 등) 전면 허용
+User-agent: *
+Allow: /
+
+# 2. 인공지능(AI) 및 LLM 답변 크롤러 전면 허용 (AEO 최적화)
+User-agent: Google-Extended
+Allow: /
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+# 검색 로봇 및 AI 에이전트 안내 파일 위치
+Sitemap: https://safedataconvert.com/sitemap.xml

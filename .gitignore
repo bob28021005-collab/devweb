@@ -1,0 +1,6 @@
+# 백업 폴더 제외
+old/
+
+# 운영체제 임시 파일
+Thumbs.db
+.DS_Store

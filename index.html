@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- 0. 네이버 서치어드바이저 사이트 소유확인 메타 태그 -->
+  <meta name="naver-site-verification" content="35c60a4f02e8cfa1851b67a009c30527b2282bb6" />
+
+  <!-- 1. 기본 SEO 메타 태그 (검색 결과 제목 및 설명문) -->
+  <title>안전한 데이터 변환 사이트 - SafeDataConvert | CSV JSON SQL XML YAML 변환</title>
+  <meta name="description" content="외부 서버 전송 0바이트! 브라우저 로컬 환경에서 500MB 대용량 데이터를 안전하고 빠르게 변환하는 CSV, JSON, SQL, YAML, XML 안전한 데이터 변환 유틸리티 사이트." />
+  <meta name="keywords" content="CSV JSON 변환, JSON CSV 변환, CSV SQL 변환, 대용량 CSV 분할, JSON YAML 변환, 안전한 데이터 변환, 로컬 데이터 변환기, 서버 전송 없는 변환기" />
+  <link rel="canonical" href="https://safedataconvert.com/" />
+
+  <!-- 2. SNS 및 링크 공유 최적화 (Open Graph) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://safedataconvert.com/" />
+  <meta property="og:title" content="안전한 데이터 변환 사이트 - SafeDataConvert" />
+  <meta property="og:description" content="외부 전송 0바이트, PC 로컬 Web Worker 스트리밍 기반 초고속 데이터 변환 도구 (CSV, JSON, SQL, YAML 등 지원)" />
+
+  <!-- 3. 구글 및 네이버 검색엔진용 Schema.org 구조화 데이터 (리치 스니펫 생성용 JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebApplication",
+        "@id": "https://safedataconvert.com/#webapp",
+        "name": "SafeDataConvert",
+        "url": "https://safedataconvert.com/",
+        "applicationCategory": "DeveloperApplication, UtilityApplication",
+        "operatingSystem": "All (Web Browser)",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "description": "외부 서버 전송 0바이트, 100% 브라우저 로컬 메모리에서 대용량 데이터를 안전하게 변환하는 웹 유틸리티"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://safedataconvert.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "외부 서버로 데이터가 정말 1바이트도 전송되지 않나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 100% 안전합니다. SafeDataConvert는 브라우저의 최신 기술인 Web Worker와 클라이언트 사이드 스트리밍 API를 사용하여 고객님의 PC 메모리 안에서만 데이터를 연산합니다. F12 키를 눌러 개발자 도구의 Network 탭을 확인하시면 변환 중 외부 서버로 나가는 패킷이 정확히 0바이트임을 직접 검증하실 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "사내 기밀 데이터나 개인정보가 포함된 파일을 변환해도 안전한가요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 매우 안전합니다. 일반적인 온라인 변환기는 사용자의 파일을 자사 클라우드 서버로 업로드하여 변환하기 때문에 데이터 유출 및 사내 보안 규정(DLP) 위반 소지가 있습니다. 반면 SafeDataConvert는 파일이 사용자의 PC 외부로 절대 나가지 않으므로 금융권, 공공기관, 기업 대외비 데이터도 안심하고 변환할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "엑셀에서 열리지 않는 수백 메가바이트(MB) 대용량 CSV 파일도 처리할 수 있나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "네, 가능합니다. 엑셀의 최대 행 제한(1,048,576행)을 초과하는 대용량 CSV 파일도 'Large CSV 분할기' 모드를 통해 원하는 행 단위로 깔끔하게 쪼개거나, Web Worker 스트리밍 엔진을 통해 최대 500MB까지 브라우저 멈춤 없이 초고속 변환할 수 있습니다."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "500MB 대용량 파일을 처리할 때 컴퓨터가 멈추거나 다운되지 않나요?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "다운되지 않습니다. 메인 화면을 담당하는 UI 스레드와 분리된 백그라운드 Web Worker에서 데이터를 청크(Chunk) 단위로 쪼개어 실시간 스트리밍 처리하므로, 대용량 파일 변환 중에도 컴퓨터가 멈추지 않고 부드럽게 동작합니다."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ==================== [상단 헤더 영역] ==================== -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="logo-icon">⚡</span>
+        <span class="brand-name">SafeData<b>Convert</b></span>
+      </div>
+      <div class="security-badge">
+        <span class="status-dot"></span>
+        <span data-i18n="security_badge">외부 서버 통신 0바이트 (100% 로컬 연산)</span>
+      </div>
+      <div class="header-right" style="display: flex; gap: 0.75rem; align-items: center;">
+        <!-- 🌍 7개 국어 드롭다운 (국기 포함) -->
+        <select id="language-select" class="lang-selector">
+          <option value="en">🇺🇸 English</option>
+          <option value="ko" selected>🇰🇷 한국어</option>
+          <option value="zh">🇨🇳 中文 (简体)</option>
+          <option value="ja">🇯🇵 日本語</option>
+          <option value="de">🇩🇪 Deutsch</option>
+          <option value="es">🇪🇸 Español</option>
+          <option value="fr">🇫🇷 Français</option>
+        </select>
+        <div class="license-status">
+          <button id="btn-open-license" class="btn-license" data-i18n="license_btn">Pro 라이선스 인증</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== [메인 작업 영역] ==================== -->
+  <main class="main-container">
+    <!-- 히어로 타이틀 영역 -->
+    <section class="hero-section">
+      <h1>안전한 데이터 변환 사이트 (CSV, JSON, SQL, YAML)</h1>
+      <p>사내 기밀 및 대용량 데이터를 외부 클라우드 전송 없이 PC 메모리 내에서 직접 스트리밍 변환하는 100% 안전한 데이터 변환 플랫폼입니다.</p>
+    </section>
+
+    <!-- 10종 포맷 선택 탭 -->
+    <section class="converter-selector">
+      <label for="conversion-mode" data-i18n="mode_label">변환 모드 선택:</label>
+      <select id="conversion-mode">
+        <option value="csv-json">1. CSV ➔ JSON</option>
+        <option value="json-csv">2. JSON ➔ CSV</option>
+        <option value="csv-sql">3. CSV ➔ SQL (INSERT)</option>
+        <option value="json-yaml">4. JSON ➔ YAML</option>
+        <option value="yaml-json">5. YAML ➔ JSON</option>
+        <option value="xml-json">6. XML ➔ JSON</option>
+        <option value="json-xml">7. JSON ➔ XML</option>
+        <option value="json-tsv">8. JSON ➔ TSV (엑셀 붙여넣기용)</option>
+        <option value="csv-split">9. Large CSV 분할기 (행 단위 추출)</option>
+        <option value="base64-hex">10. Base64 ➔ Hex / Plain Text</option>
+      </select>
+    </section>
+
+    <!-- 옵션 패널 -->
+    <section id="options-panel" class="options-panel">
+      <div class="option-item" id="opt-delimiter">
+        <label data-i18n="opt_delimiter">CSV 구분자:</label>
+        <select id="csv-delimiter">
+          <option value="auto" data-i18n="opt_auto">자동 감지 (Auto)</option>
+          <option value=",">콤마 (,)</option>
+          <option value="&#9;">탭 (	)</option>
+          <option value=";">세미콜론 (;)</option>
+          <option value="|">파이프 (|)</option>
+        </select>
+      </div>
+      <div class="option-item" id="opt-table-name" style="display:none;">
+        <label data-i18n="opt_table">SQL 테이블명:</label>
+        <input type="text" id="sql-table" value="my_table" />
+      </div>
+      <div class="option-item" id="opt-split-lines" style="display:none;">
+        <label data-i18n="opt_split">분할 행 수 (Lines):</label>
+        <input type="number" id="split-lines" value="50000" />
+      </div>
+      <div class="option-item">
+        <label class="chk-label"><input type="checkbox" id="skip-empty-lines" checked /> <span data-i18n="opt_skip">빈 줄 및 손상 행 자동 무시</span></label>
+      </div>
+    </section>
+
+    <!-- 파일 드롭존 카드 -->
+    <section class="dropzone-card" id="dropzone">
+      <input type="file" id="file-input" class="file-input-hidden" />
+      <div class="dropzone-content">
+        <div class="upload-icon">📁</div>
+        <h3 data-i18n="dropzone_title">파일을 끌어다 놓거나 클릭하여 선택하세요</h3>
+        <p class="file-hint" data-i18n="dropzone_hint">무료 10MB 지원 | Pro 라이선스 최대 500MB 스트리밍</p>
+        <p id="selected-file-info" class="selected-file-info"></p>
+      </div>
+    </section>
+
+    <!-- 진행률 게이지 및 속도 UI -->
+    <section id="progress-section" class="progress-section" style="display: none;">
+      <div class="progress-header">
+        <span id="progress-status-text" data-i18n="prog_status">대용량 로컬 스트리밍 변환 중...</span>
+        <span id="progress-percent">0%</span>
+      </div>
+      <div class="progress-bar-bg">
+        <div id="progress-bar-fill" class="progress-bar-fill"></div>
+      </div>
+      <div class="progress-meta">
+        <span id="speed-indicator">속도: 0.0 MB/s</span>
+        <span id="elapsed-time">경과 시간: 0초</span>
+        <span id="processed-bytes">0 MB / 0 MB</span>
+      </div>
+      <div class="hardware-notice" data-i18n="hardware_notice">
+        ⚠️ 보안을 위해 PC(로컬)에서 직접 연산됩니다. 파일 용량 및 고객님의 PC 사양(CPU/RAM)에 따라 작업 시간에 변동이 있을 수 있습니다.
+      </div>
+    </section>
+
+    <!-- 작업 제어 버튼 -->
+    <div class="action-buttons">
+      <button id="btn-convert" class="btn-primary" disabled data-i18n="btn_convert">변환 시작 및 다운로드</button>
+      <button id="btn-cancel" class="btn-secondary" style="display: none;" data-i18n="btn_cancel">작업 중단</button>
+    </div>
+
+    <!-- 데이터 사전 미리보기 테이블 -->
+    <section id="preview-section" class="preview-section" style="display: none;">
+      <div class="preview-header">
+        <h3 data-i18n="preview_title">데이터 사전 미리보기 (상위 50행)</h3>
+        <span class="preview-tag" data-i18n="preview_tag">Dry-Run 무결성 검증</span>
+      </div>
+      <div class="table-wrapper" id="preview-table-container"></div>
+    </section>
+
+    <!-- F12 신뢰 검증 안내 배너 -->
+    <section class="trust-footer-banner">
+      <h4 data-i18n="trust_title">💡 외부 전송 0바이트 직접 확인하기</h4>
+      <p data-i18n="trust_desc">브라우저에서 <code>F12</code> 키를 눌러 <b>Network(네트워크)</b> 탭을 연 후 변환을 실행해 보세요. 외부 서버로 나가는 데이터 패킷이 정확히 0바이트임을 직접 검증할 수 있습니다.</p>
+    </section>
+
+    <!-- ================================================================= -->
+    <!-- [원페이지 롱폼 SEO / AEO 콘텐츠 영역] -->
+    <!-- ================================================================= -->
+
+    <!-- 1. 주요 포맷별 변환 및 활용 가이드 -->
+    <section class="seo-content-section">
+      <div class="section-title-wrap">
+        <span class="sub-badge">Safe & Fast Conversion</span>
+        <h2>SafeDataConvert 주요 기능 및 포맷별 활용 가이드</h2>
+        <p class="section-intro">웹 개발자, 데이터 엔지니어, 공공기관 및 기업 실무자를 위한 가장 안전한 데이터 가공 솔루션입니다.</p>
+      </div>
+
+      <div class="guide-grid">
+        <article class="guide-card">
+          <div class="card-icon">🔄</div>
+          <h3>1. CSV ➔ JSON 변환 (웹 개발 & API 연동)</h3>
+          <p>
+            엑셀이나 공공데이터 포털에서 다운로드한 <strong>CSV 파일</strong>을 웹 프론트엔드나 백엔드 REST API에서 즉시 활용할 수 있는 표준 <strong>JSON(JavaScript Object Notation)</strong> 배열 포맷으로 변환합니다. 숫자, 불리언(True/False), 널(Null) 값의 타입을 지능적으로 판별하여 데이터 유실 없는 정확한 변환을 보장합니다.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-icon">🗄️</div>
+          <h3>2. CSV ➔ SQL INSERT 변환 (DB 대량 적재)</h3>
+          <p>
+            대용량 CSV 데이터를 MySQL, PostgreSQL, Oracle, SQLite 등 관계형 데이터베이스에 즉시 넣을 수 있는 <code>INSERT INTO table VALUES (...)</code> SQL 스크립트로 생성합니다. 원하는 테이블명을 직접 지정할 수 있으며 문자열 이스케이프(Escape) 처리가 자동 적용되어 SQL 인젝션 에러를 방지합니다.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-icon">✂️</div>
+          <h3>3. Large CSV 분할기 (엑셀 100만 행 한계 해결)</h3>
+          <p>
+            Microsoft Excel은 시트당 <strong>1,048,576행</strong>까지만 열 수 있어 대용량 로그나 고객 데이터를 열 때 프로그램이 멈추거나 데이터가 잘립니다. SafeDataConvert의 CSV 분할기는 100만 행이 넘는 파일도 첫 줄 헤더(Header)를 유지한 채 원하는 행 단위(예: 5만 행씩)로 메모리 부하 없이 초고속 분할합니다.
+          </p>
+        </article>
+
+        <article class="guide-card">
+          <div class="card-icon">⚙️</div>
+          <h3>4. JSON, YAML, XML 상호 변환 (클라우드 설정 파일)</h3>
+          <p>
+            쿠버네티스(Kubernetes), 도커(Docker), 스프링부트, AWS 설정에 필요한 <strong>YAML 포맷</strong>과 레거시 시스템 연동을 위한 <strong>XML 데이터</strong>를 상호 변환합니다. 외부 서버에 API 키나 접속 정보가 유출될 위험 없이 브라우저 안에서 완벽하게 처리됩니다.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 2. 일반 온라인 변환기 vs SafeDataConvert 비교 분석표 -->
+    <section class="seo-content-section">
+      <div class="section-title-wrap">
+        <span class="sub-badge">Security Comparison</span>
+        <h2>일반 온라인 변환기 vs SafeDataConvert 보안 비교</h2>
+        <p class="section-intro">사내 보안 규정(DLP)과 개인정보보호법을 준수해야 하는 실무자라면 반드시 확인해야 할 차이점입니다.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>비교 항목</th>
+              <th>일반 온라인 무료 변환 사이트</th>
+              <th class="highlight-th">⚡ SafeDataConvert</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>데이터 전송 방식</strong></td>
+              <td>사용자 파일을 외부 클라우드 서버로 업로드 전송</td>
+              <td class="highlight-td"><strong>외부 서버 전송 0바이트 (PC 로컬 100% 격리)</strong></td>
+            </tr>
+            <tr>
+              <td><strong>기업 보안 및 법적 위험</strong></td>
+              <td>사내 기밀 유출, DLP 감사 적발 위험, 개인정보보호법 위반 소지</td>
+              <td class="highlight-td"><strong>사내 보안 정책 완벽 준수, 데이터 유출 가능성 0%</strong></td>
+            </tr>
+            <tr>
+              <td><strong>대용량 처리 한도</strong></td>
+              <td>서버 과부하 방지를 위해 보통 5MB ~ 10MB로 엄격히 제한</td>
+              <td class="highlight-td"><strong>최신 Web Worker 스트리밍 엔진으로 최대 500MB 지원</strong></td>
+            </tr>
+            <tr>
+              <td><strong>네트워크 보안 검증</strong></td>
+              <td>서버 내부 처리를 유저가 검증할 수 없음 (불투명)</td>
+              <td class="highlight-td"><strong>F12 개발자 도구의 Network 탭에서 0바이트 전송 직접 확인 가능</strong></td>
+            </tr>
+            <tr>
+              <td><strong>다국어 및 편의성</strong></td>
+              <td>영어 전용이거나 팝업 광고가 매우 많음</td>
+              <td class="highlight-td"><strong>7개 국어 지원, 광고 없는 쾌적하고 깔끔한 UI</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 3. 검색엔진 1위 유도를 위한 '자주 묻는 질문 (FAQ)' 섹션 -->
+    <section class="seo-content-section">
+      <div class="section-title-wrap">
+        <span class="sub-badge">Frequently Asked Questions</span>
+        <h2>자주 묻는 질문 (FAQ)</h2>
+        <p class="section-intro">SafeDataConvert의 보안 메커니즘과 동작 원리에 대해 자주 묻는 질문을 모았습니다.</p>
+      </div>
+
+      <div class="faq-container">
+        <details class="faq-item" open>
+          <summary class="faq-question">
+            <span>Q. 외부 서버로 데이터가 정말 1바이트도 전송되지 않나요?</span>
+            <span class="faq-arrow">▼</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>네, 100% 안전합니다.</strong> SafeDataConvert는 브라우저의 최신 기술인 <code>Web Worker</code>와 클라이언트 사이드 스트리밍 API를 사용하여 고객님의 PC 메모리 안에서만 데이터를 연산합니다. F12 키를 눌러 개발자 도구의 <strong>Network(네트워크)</strong> 탭을 확인하시면 변환 중 외부 서버로 나가는 패킷이 정확히 0바이트임을 직접 검증하실 수 있습니다.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Q. 사내 대외비 문서나 고객 개인정보를 변환해도 보안상 안전한가요?</span>
+            <span class="faq-arrow">▼</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>네, 완전히 안전합니다.</strong> 일반적인 온라인 변환기는 사용자의 파일을 자사 클라우드 서버로 업로드하여 변환하기 때문에 데이터 유출 및 사내 보안 규정(DLP) 위반 소지가 있습니다. 반면 SafeDataConvert는 파일이 사용자의 PC 외부로 절대 나가지 않으므로 금융권, 공공기관, 기업 대외비 데이터도 안심하고 변환할 수 있습니다.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Q. 500MB 대용량 파일을 처리할 때 컴퓨터가 멈추거나 다운되지 않나요?</span>
+            <span class="faq-arrow">▼</span>
+          </summary>
+          <div class="faq-answer">
+            <p><strong>다운되지 않습니다.</strong> 메인 화면을 담당하는 UI 스레드와 분리된 백그라운드 Web Worker에서 데이터를 청크(Chunk) 단위로 쪼개어 실시간 스트리밍 처리하므로, 대용량 파일 변환 중에도 컴퓨터가 멈추지 않고 실시간 진행률과 변환 속도(MB/s)를 확인하며 쾌적하게 작업할 수 있습니다.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Q. 엑셀에서 열리지 않는 수백만 행 CSV는 어떻게 처리하나요?</span>
+            <span class="faq-arrow">▼</span>
+          </summary>
+          <div class="faq-answer">
+            <p>변환 모드에서 <strong>9번 'Large CSV 분할기'</strong>를 선택하신 후 원하는 행 수(예: 50,000행)를 입력하고 파일을 업로드해 보세요. 첫 줄 컬럼 헤더가 유지된 여러 개의 분할 파일로 즉시 쪼개어 다운로드되므로 엑셀에서 손쉽게 열람하고 편집할 수 있습니다.</p>
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">
+            <span>Q. 어떤 브라우저와 운영체제(OS)에서 이용할 수 있나요?</span>
+            <span class="faq-arrow">▼</span>
+          </summary>
+          <div class="faq-answer">
+            <p>Google Chrome, Microsoft Edge, Apple Safari, Mozilla Firefox, Whale 등 최신 웹 표준을 지원하는 모든 모던 브라우저와 Windows, macOS, Linux 환경에서 별도의 프로그램 설치 없이 즉시 사용할 수 있습니다.</p>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- 4. 관련 핵심 키워드 태그 클라우드 -->
+    <section class="seo-keywords-section">
+      <div class="tag-title">관련 인기 검색 키워드</div>
+      <div class="tag-cloud">
+        <span class="tag-pill">#CSV JSON 변환</span>
+        <span class="tag-pill">#대용량 CSV 뷰어</span>
+        <span class="tag-pill">#CSV SQL INSERT 쿼리</span>
+        <span class="tag-pill">#JSON YAML 온라인 변환</span>
+        <span class="tag-pill">#엑셀 100만행 분할기</span>
+        <span class="tag-pill">#안전한 데이터 변환 사이트</span>
+        <span class="tag-pill">#서버 전송 없는 로컬 변환</span>
+        <span class="tag-pill">#XML JSON 포맷 변환</span>
+        <span class="tag-pill">#Base64 텍스트 디코딩</span>
+        <span class="tag-pill">#웹워커 스트리밍 컨버터</span>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== [Polar 라이선스 모달] ==================== -->
+  <div id="license-modal" class="modal-overlay" style="display: none;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 data-i18n="modal_title">Pro 라이선스 인증</h2>
+        <button id="btn-close-modal" class="btn-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p class="modal-desc" data-i18n="modal_desc">1회 결제로 대용량(최대 500MB) Web Worker 스트리밍 엔진을 평생 영구 해금하세요. (월 구독료 0원)</p>
+        
+        <div class="pricing-cards" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="price-box">
+            <h4 data-i18n="plan_personal">Personal Pro</h4>
+            <div class="price">$19 <span data-i18n="plan_one_time">/ 1회 영구 결제</span></div>
+            <ul>
+              <li data-i18n="p1_1">1대 기기(PC) 평생 등록</li>
+              <li data-i18n="p1_2">최대 500MB 스트리밍 처리</li>
+              <li data-i18n="p1_3">10종 전체 변환기 무제한</li>
+            </ul>
+            <a href="https://buy.polar.sh/polar_cl_WQf8iIKgXte7QPpX2tHHD4J3VM6h0ROC2FvPX0RRNy7" target="_blank" class="btn-buy">Personal 구매</a>
+          </div>
+          <div class="price-box featured">
+            <h4 data-i18n="plan_team">Team License</h4>
+            <div class="price">$49 <span data-i18n="plan_one_time">/ 1회 영구 결제</span></div>
+            <ul>
+              <li data-i18n="t1_1">4대 기기 동시 활성화</li>
+              <li data-i18n="t1_2">부서 공유 및 분할 저장 지원</li>
+              <li data-i18n="t1_3">우선 순위 업데이트 지원</li>
+            </ul>
+            <a href="https://buy.polar.sh/polar_cl_yQbsKForcfZVURfCDLAwDEnCxDPImaafGFhw33lTbWi" target="_blank" class="btn-buy featured-btn">Team 구매</a>
+          </div>
+          <div class="price-box">
+            <h4>Business License</h4>
+            <div class="price">$99 <span>/ 1회 영구 결제</span></div>
+            <ul>
+              <li>10대 기기 동시 활성화</li>
+              <li>기업 및 대규모 팀용</li>
+              <li>우선 순위 업데이트 지원</li>
+            </ul>
+            <a href="https://buy.polar.sh/polar_cl_5kkZBZ4axhv2VXiYryflF4TLc8Lk9XvXLnXGE3qM8m3" target="_blank" class="btn-buy">Business 구매</a>
+          </div>
+        </div>
+
+        <div class="activation-form">
+          <label for="license-key-input" data-i18n="lbl_key">구매한 라이선스 키 입력:</label>
+          <div class="input-group">
+            <input type="text" id="license-key-input" placeholder="XXXX-XXXX-XXXX-XXXX" />
+            <button id="btn-activate-key" class="btn-primary" data-i18n="btn_activate">정품 인증</button>
+          </div>
+          <p id="activation-msg" class="activation-msg"></p>
+          <div class="modal-recovery-info">
+            <span data-i18n="recovery_text">* 키를 분실하셨나요?</span> <a href="https://polar.sh/" target="_blank" data-i18n="recovery_link">주문 내역 조회</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
